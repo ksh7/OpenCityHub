@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: trafficmgmt-rabbitmq-container
+  labels:
+    app: trafficmgmt-rabbitmq-container
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: trafficmgmt-rabbitmq-container
+  template:
+    metadata:
+      labels:
+        app: trafficmgmt-rabbitmq-container
+    spec:
+      containers:
+        - name: trafficmgmt-rabbitmq-container
+          image: quay.io/aenvsite/traffic_management
+          command: [ "/bin/sh","-c" ]
+          args: [ "python rabbitmq_consumer.py;" ]
+          envFrom:
+          - configMapRef:
+              name: trafficmgmt-configmap

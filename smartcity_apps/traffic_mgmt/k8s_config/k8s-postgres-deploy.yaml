@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: trafficmgmt-postgres-container
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: trafficmgmt-postgres-container
+  template:
+    metadata:
+      labels:
+        app: trafficmgmt-postgres-container
+        tier: backend
+    spec:
+      containers:
+        - name: trafficmgmt-postgres-container
+          image: postgres:16.0
+          ports:
+            - containerPort: 5432
+          envFrom:
+          - configMapRef:
+              name: trafficmgmt-configmap
+          env:
+            - name: PGDATA
+              value: /var/lib/postgresql/data/some_name/

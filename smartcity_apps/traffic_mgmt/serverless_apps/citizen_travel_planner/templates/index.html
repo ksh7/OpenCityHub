@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <meta name="generator" content="Hugo 0.84.0">
+  <title>Citizen Travel Planner</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.min.css') }}">
+
+  <meta name="theme-color" content="#7952b3">
+  <style>
+    .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      user-select: none;
+    }
+
+    @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+      }
+    }
+  </style>
+  <link rel="stylesheet" href="{{ url_for('static', filename='page.css') }}">
+</head>
+
+<body class="text-center">
+
+  <main class="form-signin">
+    <form id="tripForm">
+      <h1 class="h3 mb-3 fw-normal">Plan Your Journey</h1>
+      <h4 class="h6 mb-5 fw-normal">powered by <strong>OpenCityHub</strong></h4>
+
+      <div class="form-floating mb-3">
+        <select class="form-control" name="journeyFrom" id="journeyFrom">
+          <option>Broadway</option>
+          <option>Fifth Avenue</option>
+          <option>Wall Street</option>
+          <option>Madison Avenue</option>
+          <option>Park Avenue</option>
+          <option>Lexington Avenue</option>
+          <option>Houston Street</option>
+          <option>Canal Street</option>
+          <option>Bleecker Street</option>
+          <option>Bowery Street</option>
+        </select>
+        <label for="floatingFrom">From</label>
+      </div>
+      <div class="form-floating mb-3">
+        <select class="form-control" name="journeyTo" id="journeyTo">
+          <option>Broadway</option>
+          <option>Fifth Avenue</option>
+          <option>Wall Street</option>
+          <option>Madison Avenue</option>
+          <option>Park Avenue</option>
+          <option>Lexington Avenue</option>
+          <option>Houston Street</option>
+          <option>Canal Street</option>
+          <option>Bleecker Street</option>
+          <option>Bowery Street</option>
+        </select>
+        <label for="floatingFrom">To</label>
+      </div>
+      <div class="form-floating mb-3">
+        <textarea class="form-control" name="instructions" id="floatingInstructions" rows="3" placeholder="any additional info"></textarea>
+        <label for="floatingInstructions">Instructions/Additional Info</label>
+      </div>
+
+      <div class="checkbox mb-3">
+        <label>
+          <input type="checkbox" id="noData" value="no data"> Don't save data
+        </label>
+      </div>
+      <button id="planRouteBtn" class="w-100 btn btn-lg btn-primary" type="button">Get Suggestions</button>
+
+    </form>
+    <div id="loader" class="mt-3" style="display:none;">
+      <img src="{{ url_for('static', filename='loader.gif') }}" height="50px" alt="Loading...">
+    </div>
+    <div id="result" class="mt-3" style="display:none;">
+    </div>
+  </main>
+
+  <script src="{{ url_for('static', filename='jquery.min.js') }}"></script>
+  <script>
+    $(document).ready(function () {
+      $("#planRouteBtn").click(function () {
+        $("#result").hide();
+        $("#loader").show();
+        var formData = $("#tripForm").serialize();
+        $.ajax({
+          type: "POST",
+          url: "/plan_route",
+          data: formData,
+          success: function (response) {
+            $("#loader").hide();
+            $("#result").html('<div class="card bg-light mb-3"><div class="card-header">Journey Plan</div><div class="card-body"><p class="card-text">' + response.journey_plan + '</p></div></div>');
+            $("#result").show();
+          },
+          error: function (error) {
+            console.log(error);
+            $("#loader").hide();
+            $("#result").html('<div class="card bg-light mb-3"><div class="card-header">Journey Plan</div><div class="card-body"><p class="card-text">Can not generate a plan. Try again later.</p></div></div>');
+            $("#result").show();
+          }
+        });
+      });
+    });
+  </script>
+
+
+
+</body>
+
+</html>

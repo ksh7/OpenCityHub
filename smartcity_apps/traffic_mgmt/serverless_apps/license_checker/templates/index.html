@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <meta name="generator" content="Hugo 0.84.0">
+  <title>Citizen Travel Planner</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.min.css') }}">
+
+  <meta name="theme-color" content="#7952b3">
+  <style>
+    .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      user-select: none;
+    }
+
+    @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+      }
+    }
+  </style>
+  <link rel="stylesheet" href="{{ url_for('static', filename='page.css') }}">
+</head>
+
+<body class="text-center">
+  <main class="form-signin">
+    <form id="licenseForm" enctype="multipart/form-data">
+      <h1 class="h3 mb-2 fw-normal">Check Vehicle License</h1>
+      <h4 class="h6 mb-5 fw-normal">powered by <strong>OpenCityHub</strong></h4>
+
+      <div class=" mb-3">
+        <input type="file" class="form-control" id="licenseImg" name="licenseImg" accept="image/png, image/jpeg" />
+      </div>
+      <button id="checkLicenseBtn" class="w-100 btn btn-lg btn-primary mt-3" type="button">Check License</button>
+
+    </form>
+    <div id="loader" class="mt-3" style="display:none;">
+      <img src="{{ url_for('static', filename='loader.gif') }}" height="50px" alt="Loading...">
+    </div>
+    <div id="result" class="mt-5" style="display:none;">
+    </div>
+  </main>
+
+  <script src="{{ url_for('static', filename='jquery.min.js') }}"></script>
+  <script>
+    $(document).ready(function () {
+      $("#checkLicenseBtn").click(function () {
+        $("#result").hide();
+        $("#loader").show();
+        var formData = $("#licenseForm").serialize();
+        $.ajax({
+          type: "POST",
+          url: "/check_license",
+          data: formData,
+          success: function (response) {
+            $("#loader").hide();
+            $("#result").html('<div class="card bg-light mb-3"><div class="card-header">License Details</div><div class="card-body"><p class="card-text">' + response.journey_plan + '</p></div></div>');
+            $("#result").show();
+          },
+          error: function (error) {
+            console.log(error);
+            $("#loader").hide();
+            $("#result").html('<div class="card bg-light mb-3"><div class="card-header">License Details</div><div class="card-body"><p class="card-text">Can not generate a plan. Try again later.</p></div></div>');
+            $("#result").show();
+          }
+        });
+      });
+    });
+  </script>
+
+
+
+</body>
+
+</html>

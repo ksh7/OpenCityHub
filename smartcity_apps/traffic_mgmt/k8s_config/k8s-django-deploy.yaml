@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: trafficmgmt-django-container
+  labels:
+    app: trafficmgmt-django-container
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: trafficmgmt-django-container
+  template:
+    metadata:
+      labels:
+        app: trafficmgmt-django-container
+    spec:
+      containers:
+        - name: trafficmgmt-django-container
+          image: quay.io/aenvsite/traffic_management
+          command: [ "/bin/sh","-c" ]
+          args: [ "python manage.py migrate; python manage.py runserver 0.0.0.0:8000;" ]
+          ports:
+            - containerPort: 8000
+          envFrom:
+          - configMapRef:
+              name: trafficmgmt-configmap

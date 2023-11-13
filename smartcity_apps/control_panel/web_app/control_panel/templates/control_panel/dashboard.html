@@ -1,0 +1,545 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+
+<div class="pagetitle">
+  <h1>Dashboard</h1>
+  <nav>
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+      <li class="breadcrumb-item active">Dashboard</li>
+    </ol>
+  </nav>
+</div><!-- End Page Title -->
+
+<section class="section dashboard">
+  <div class="row">
+
+    <!-- Left side columns -->
+    <div class="col-lg-8">
+      <div class="row">
+
+        <!-- Sales Card -->
+        <div class="col-md-6">
+          <div class="card info-card sales-card">
+
+            <div class="filter">
+              <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+              <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                <li class="dropdown-header text-start">
+                  <h6>Filter</h6>
+                </li>
+
+                <li><a class="dropdown-item" href="#">Today</a></li>
+                <li><a class="dropdown-item" href="#">This Month</a></li>
+                <li><a class="dropdown-item" href="#">This Year</a></li>
+              </ul>
+            </div>
+
+            <div class="card-body">
+              <h5 class="card-title">Traffic Management <span>| Today</span></h5>
+              <div class="d-flex align-items-center">
+                <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                  <i class="bi bi-geo-alt"></i>
+                </div>
+                <div class="ps-3">
+                  <h6>20 jams</h6>
+                  <span class="text-success small pt-1 fw-bold">15%</span> <span
+                    class="text-muted small pt-2 ps-1">decrease</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div><!-- End Sales Card -->
+
+        <!-- Revenue Card -->
+        <div class="col-md-6">
+          <div class="card info-card revenue-card">
+
+            <div class="filter">
+              <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+              <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                <li class="dropdown-header text-start">
+                  <h6>Filter</h6>
+                </li>
+
+                <li><a class="dropdown-item" href="#">Today</a></li>
+                <li><a class="dropdown-item" href="#">This Month</a></li>
+                <li><a class="dropdown-item" href="#">This Year</a></li>
+              </ul>
+            </div>
+
+            <div class="card-body">
+              <h5 class="card-title">Climate Management <span>| Today</span></h5>
+              <div class="d-flex align-items-center">
+                <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                  <i class="bi bi-cloud-sun"></i>
+                </div>
+                <div class="ps-3">
+                  <h6>72°F</h6>
+                  <span class="text-success small pt-1 fw-bold">2%</span> <span
+                    class="text-muted small pt-2 ps-1">temperature change</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div><!-- End Revenue Card -->
+
+        <!-- Customers Card -->
+        <div class="col-md-6">
+
+          <div class="card info-card customers-card">
+
+            <div class="filter">
+              <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+              <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                <li class="dropdown-header text-start">
+                  <h6>Filter</h6>
+                </li>
+
+                <li><a class="dropdown-item" href="#">Today</a></li>
+                <li><a class="dropdown-item" href="#">This Month</a></li>
+                <li><a class="dropdown-item" href="#">This Year</a></li>
+              </ul>
+            </div>
+
+            <div class="card-body">
+              <h5 class="card-title">Pollution Management <span>| Today</span></h5>
+              <div class="d-flex align-items-center">
+                <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                  <i class="bi bi-cloud-haze"></i>
+                </div>
+                <div class="ps-3">
+                  <h6>PM2.5: 25 µg/m³</h6>
+                  <span class="text-danger small pt-1 fw-bold">8%</span> <span
+                    class="text-muted small pt-2 ps-1">increase</span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div><!-- End Customers Card -->
+
+        <div class="col-md-6">
+
+          <div class="card info-card customers-card">
+
+            <div class="filter">
+              <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+              <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                <li class="dropdown-header text-start">
+                  <h6>Filter</h6>
+                </li>
+
+                <li><a class="dropdown-item" href="#">Today</a></li>
+                <li><a class="dropdown-item" href="#">This Month</a></li>
+                <li><a class="dropdown-item" href="#">This Year</a></li>
+              </ul>
+            </div>
+
+            <div class="card-body">
+              <h5 class="card-title">Emergency Management <span>| Today</span></h5>
+              <div class="d-flex align-items-center">
+                <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                  <i class="bi bi-shield-exclamation"></i>
+                </div>
+                <div class="ps-3">
+                  <h6>Incidents: 5</h6>
+                  <span class="text-danger small pt-1 fw-bold">High Priority</span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div><!-- End Customers Card -->
+
+      </div>
+      <div class="row">
+
+        <!-- Sales Card -->
+        <div class="col-md-12">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Pollution Management | <span>7 Days</span></h5>
+
+              <!-- Pollution Line Chart -->
+              <canvas id="pollutionChart"
+                style="max-height: 400px; display: block; box-sizing: border-box; height: 299px; width: 599px;"
+                width="599" height="299"></canvas>
+              <script>
+                document.addEventListener("DOMContentLoaded", () => {
+                  new Chart(document.querySelector('#pollutionChart'), {
+                    type: 'line',
+                    data: {
+                      labels: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+                      datasets: [
+                        {
+                          label: 'PM2.5',
+                          data: [20, 18, 25, 22, 30, 28, 15],
+                          fill: false,
+                          borderColor: 'rgb(255, 99, 132)',
+                          // tension: 0,
+                          lineTension: 0.3,
+                        },
+                        {
+                          label: 'NO2',
+                          data: [15, 12, 18, 16, 20, 22, 14],
+                          fill: false,
+                          borderColor: 'rgb(54, 162, 235)',
+                          // tension: 0,
+                          lineTension: 0.3,
+                        },
+                        {
+                          label: 'CO2',
+                          data: [30, 28, 32, 31, 33, 34, 29],
+                          fill: false,
+                          borderColor: 'rgb(75, 192, 192)',
+                          // tension: 0,
+                          lineTension: 0.3,
+                        }
+                      ]
+                    },
+                    options: {
+                      scales: {
+                        x: {
+                          grid: {
+                            display: false
+                          }
+                        },
+                        y: {
+                          beginAtZero: true,
+
+                          grid: {
+                            display: false
+                          }
+                        }
+                      }
+                    }
+                  });
+                });
+              </script>
+              <!-- End Pollution Line Chart -->
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+
+        <!-- Sales Card -->
+        <div class="col-md-6">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Traffic Overview | <span>Today</span></h5>
+
+              <canvas id="trafficDoughnutChart"
+                style="max-height: 400px; display: block; box-sizing: border-box; height: 400px; width: 599px;"
+                width="599" height="400"></canvas>
+              <script>
+                document.addEventListener("DOMContentLoaded", () => {
+                  new Chart(document.querySelector('#trafficDoughnutChart'), {
+                    type: 'doughnut',
+                    data: {
+                      labels: [
+                        'Normal Flow',
+                        'Congested',
+                        'Smooth Flow'
+                      ],
+                      datasets: [{
+                        label: 'Traffic Status',
+                        data: [60, 20, 20], // Update with your actual data percentages
+                        backgroundColor: [
+                          'rgb(75, 192, 192)',
+                          'rgb(255, 99, 132)',
+                          'rgb(54, 162, 235)'
+                        ],
+                        hoverOffset: 4
+                      }]
+                    }
+                  });
+                });
+              </script>
+              <!-- End Doughnut Chart -->
+
+            </div>
+
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Congested Areas | Today</h5>
+
+              <!-- Doughnut Chart -->
+              <canvas id="congestedAreasDoughnutChart"
+                style="max-height: 400px; display: block; box-sizing: border-box; height: 400px; width: 599px;"
+                width="599" height="400"></canvas>
+              <script>
+                document.addEventListener("DOMContentLoaded", () => {
+                  new Chart(document.querySelector('#congestedAreasDoughnutChart'), {
+                    type: 'doughnut',
+                    data: {
+                      labels: [
+                        'Downtown',
+                        'Highways',
+                        'Residential Areas',
+                        'Commercial Areas',
+                        'Others'
+                      ],
+                      datasets: [{
+                        label: 'Congested Areas',
+                        data: [25, 20, 15, 30, 10], // Update with your actual data percentages
+                        backgroundColor: [
+                          'rgb(255, 99, 132)',
+                          'rgb(54, 162, 235)',
+                          'rgb(255, 205, 86)',
+                          'rgb(75, 192, 192)',
+                          'rgb(153, 102, 255)'
+                        ],
+                        hoverOffset: 4
+                      }]
+                    }
+                  });
+                });
+              </script>
+              <!-- End Doughnut Chart -->
+
+            </div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Traffic/Pollution Management | <span>7 Days</span></h5>
+
+              <!-- Bubble Chart -->
+              <canvas id="smartCityBubbleChart"
+                style="max-height: 400px; display: block; box-sizing: border-box; height: 299px; width: 599px;"
+                width="599" height="299"></canvas>
+              <script>
+                document.addEventListener("DOMContentLoaded", () => {
+                  new Chart(document.querySelector('#smartCityBubbleChart'), {
+                    type: 'bubble',
+                    data: {
+                      labels: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+                      datasets: [
+                        {
+                          label: 'Traffic Management',
+                          data: [
+                            { x: 20, y: 30, r: 15 },
+                            { x: 40, y: 10, r: 10 },
+                            { x: 15, y: 37, r: 12 },
+                            { x: 32, y: 42, r: 33 }
+                          ],
+                          borderColor: 'rgb(255, 99, 132)',
+                          backgroundColor: 'rgba(255, 99, 132, 0.5)'
+                        },
+                        {
+                          label: 'Climate Management',
+                          data: [
+                            { x: 40, y: 25, r: 22 },
+                            { x: 24, y: 47, r: 11 },
+                            { x: 65, y: 11, r: 14 },
+                            { x: 11, y: 55, r: 8 }
+                          ],
+                          borderColor: 'rgb(75, 192, 192)',
+                          backgroundColor: 'rgba(75, 192, 192, 0.5)'
+                        }
+                      ]
+                    },
+                    options: {
+                      responsive: true,
+                      plugins: {
+                        legend: { position: 'top' },
+                        title: {
+                          display: true,
+                          text: 'Traffic/Pollution Management'
+                        }
+                      },
+                      scales: {
+                        x: {
+                          type: 'linear',
+                          position: 'bottom',
+                          scaleLabel: {
+                            display: true,
+                            labelString: 'Time'
+                          }
+                        },
+                        y: {
+                          scaleLabel: {
+                            display: true,
+                            labelString: 'Severity/Intensity'
+                          }
+                        }
+                      }
+                    }
+                  });
+                });
+              </script>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div><!-- End Left side columns -->
+
+    <!-- Right side columns -->
+    <div class="col-lg-4">
+
+      <div class="card mb-5">
+        <div class="card-body">
+          <h5 class="card-title">CityGPT - Ask Questions</h5>
+          <form id="askGPTForm">
+            {% csrf_token %}
+            <div class="row mb-3">
+              <label for="inputName5" class="form-label">Ask questions to discover insights</label>
+              <select id="gptquestion" name="gptquestion" class="form-select" required>
+                <option>Choose...</option>
+                <option value="Average response time for health emergencies in the city?">Average response time for health emergencies in the city?</option>
+                <option value="Reduction in traffic congestion since last week?">Reduction in traffic congestion since last week?</option>
+                <option value="Percentage decrease in air pollution levels since yesterday?">Percentage decrease in air pollution levels since yesterday?</option>
+                <option value="Number of smart sensors monitoring air quality and their coverage?">Number of smart sensors monitoring air quality and their coverage?</option>
+                <option value="Percentage of the population covered by health monitoring?">Percentage of the population covered by health monitoring?</option>
+                <option value="Reduction in carbon emissions from sustainability initiatives?">Reduction in carbon emissions from sustainability initiatives?</option>
+                <option value="Incidents of health emergencies successfully managed since last week?">Incidents of health emergencies successfully managed since last week?</option>
+                <option value="Average emergency response time since last week?">Average emergency response time since last week?</option>
+              </select>
+              <div class="text-center my-5">
+                <button id="askChatGPT" type="button" class="btn btn-primary">Ask CityGTP</button>
+                <button type="reset" class="btn btn-secondary">Reset</button>
+              </div>
+          </form><!-- End Horizontal Form -->
+          <p id="loader" class="mt-1" style="display:none;">
+            <img src="{% static 'img/loader.gif' %}" height="50px" alt="Loading...">
+          </p>
+          <p id="gptResults" class="mt-1" style="display:none;">
+          </p>
+
+          <script>
+            document.addEventListener("DOMContentLoaded", () => {
+              $("#askChatGPT").click(function () {
+                $("#gptResults").hide();
+                $("#loader").show();
+                var formData = $("#askGPTForm").serialize();
+                $.ajax({
+                  type: "POST",
+                  url: "/ask_gpt",
+                  data: formData,
+                  success: function (response) {
+                    $("#loader").hide();
+                    $("#gptResults").html('<p class="card-text">' + response.data + '</p>');
+                    $("#gptResults").show();
+                  },
+                  error: function (error) {
+                    console.log(error);
+                    $("#loader").hide();
+                    $("#gptResults").html('<p class="card-text">Can not connect to ChatGPT API. Try again later.</p>');
+                    $("#gptResults").show();
+                  }
+                });
+              });
+            });
+          </script>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Recent Activity -->
+    <div class="card">
+      <div class="filter">
+        <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+        <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+          <li class="dropdown-header text-start">
+            <h6>Filter</h6>
+          </li>
+
+          <li><a class="dropdown-item" href="#">Today</a></li>
+          <li><a class="dropdown-item" href="#">This Month</a></li>
+          <li><a class="dropdown-item" href="#">This Year</a></li>
+        </ul>
+      </div>
+
+      <div class="card-body">
+        <h5 class="card-title">Recent Activity <span>| Today</span></h5>
+
+        <div class="activity">
+
+          <div class="activity-item d-flex">
+            <div class="activite-label">32 min</div>
+            <i class='bi bi-circle-fill activity-badge text-success align-self-start'></i>
+            <div class="activity-content">
+              Sensor data indicates optimal traffic flow in downtown <a href="#" class="fw-bold text-dark">Smart
+                Traffic Control</a> zone.
+            </div>
+          </div><!-- End activity item-->
+
+          <div class="activity-item d-flex">
+            <div class="activite-label">56 min</div>
+            <i class='bi bi-circle-fill activity-badge text-danger align-self-start'></i>
+            <div class="activity-content">
+              Unusual energy consumption detected in <a href="#" class="fw-bold text-dark">Smart Street Lighting</a>
+              area. Investigation initiated.
+            </div>
+          </div><!-- End activity item-->
+
+          <div class="activity-item d-flex">
+            <div class="activite-label">2 hrs</div>
+            <i class='bi bi-circle-fill activity-badge text-primary align-self-start'></i>
+            <div class="activity-content">
+              Automated maintenance scheduled for <a href="#" class="fw-bold text-dark">Smart Waste Management</a>
+              system to optimize collection routes.
+            </div>
+          </div><!-- End activity item-->
+
+          <div class="activity-item d-flex">
+            <div class="activite-label">1 day</div>
+            <i class='bi bi-circle-fill activity-badge text-info align-self-start'></i>
+            <div class="activity-content">
+              Anomaly detected in air quality levels near <a href="#" class="fw-bold text-dark">Environmental
+                Monitoring</a> station. Alert issued.
+            </div>
+          </div><!-- End activity item-->
+
+          <div class="activity-item d-flex">
+            <div class="activite-label">2 days</div>
+            <i class='bi bi-circle-fill activity-badge text-warning align-self-start'></i>
+            <div class="activity-content">
+              Traffic congestion predicted in <a href="#" class="fw-bold text-dark">Smart Traffic Control</a> zone.
+              Preemptive measures underway.
+            </div>
+          </div><!-- End activity item-->
+
+          <div class="activity-item d-flex">
+            <div class="activite-label">4 weeks</div>
+            <i class='bi bi-circle-fill activity-badge text-muted align-self-start'></i>
+            <div class="activity-content">
+              Upgrade completed for <a href="#" class="fw-bold text-dark">Smart Water Management</a> system. Improved
+              efficiency in water distribution.
+            </div>
+          </div><!-- End activity item-->
+
+        </div>
+
+      </div>
+
+    </div><!-- End Recent Activity -->
+
+  </div><!-- End Right side columns -->
+
+  </div>
+</section>
+
+
+{% endblock%}

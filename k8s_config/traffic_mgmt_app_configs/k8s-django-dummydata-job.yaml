@@ -1,0 +1,16 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: trafficmgmt-django-loaddata
+spec:
+  template:
+    spec:
+      containers:
+        - name: trafficmgmt-django-loaddata
+          image: quay.io/aenvsite/traffic_management
+          command: ['python', 'manage.py', 'reset_dev']
+          envFrom:
+          - configMapRef:
+              name: trafficmgmt-configmap
+      restartPolicy: Never
+  backoffLimit: 5

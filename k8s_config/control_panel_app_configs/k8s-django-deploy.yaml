@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: controlpanel-django-container
+  labels:
+    app: controlpanel-django-container
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: controlpanel-django-container
+  template:
+    metadata:
+      labels:
+        app: controlpanel-django-container
+    spec:
+      containers:
+        - name: controlpanel-django-container
+          image: quay.io/aenvsite/control_panel
+          command: [ "/bin/sh","-c" ]
+          args: [ "python manage.py migrate; python manage.py runserver 0.0.0.0:8000;" ]
+          ports:
+            - containerPort: 8000
+          envFrom:
+          - configMapRef:
+              name: controlpanel-configmap

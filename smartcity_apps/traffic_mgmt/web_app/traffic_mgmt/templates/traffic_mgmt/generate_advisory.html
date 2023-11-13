@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<section class="section dashboard">
+  <div class="row mt-3">
+    <div class="col-md-8 offset-md-2">
+      {% for message in messages %}
+      <div class="alert alert-success alert-dismissible fade show" role="alert">
+        {{message|safe}}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+      {% endfor %}
+
+    </div>
+    <div class="col-md-10 offset-md-1">
+      <div class="card">
+        <div class="card-header">
+          <h3><i class="bi bi-file-text"></i> Generate Advisory</h3>
+        </div>
+        <div class="card-body">
+          <form method="post">
+            {% csrf_token %}
+            <div class="row mb-3 mt-3">
+              <label for="inputText" class="col-sm-2 col-form-label">Choose Traffic Area</label>
+              <div class="col-sm-10">
+                <select class="form-select" name="traffic_area" required aria-label="Default select example">
+                  <option>Choose...</option>
+                  <option value="Broadway">Broadway</option>
+                  <option value="Fifth Avenue">Fifth Avenue</option>
+                  <option value="Wall Street">Wall Street</option>
+                  <option value="Lexington Avenue">Lexington Avenue</option>
+                  <option value="Central Park West">Central Park West</option>
+
+                </select>
+              </div>
+            </div>
+            <div class="row mb-3">
+              <label for="inputText" class="col-sm-2 col-form-label">Choose Transport Type</label>
+              <div class="col-sm-10">
+                <select class="form-select" name="transport_type" required aria-label="Default select example">
+                  <option>Choose...</option>
+                  <option value="Metro">Metro</option>
+                  <option value="City Bus">City Bus</option>
+                  <option value="Cars">Cars</option>
+                  <option value="Heavy Vehicles">Heavy Vehicles</option>
+                  <option value="Bikes">Bikes</option>
+
+                </select>
+              </div>
+            </div>
+            <div class="row mb-3">
+              <label for="inputPassword" class="col-sm-2 col-form-label">Custom Instructions</label>
+              <div class="col-sm-10">
+                <textarea class="form-control" name="" style="height: 100px"></textarea>
+              </div>
+            </div>
+
+
+            <button type="submit" class="btn btn-primary">Generate AI Advisory</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+{% endblock%}

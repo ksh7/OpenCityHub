@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: trafficmgmt-redis-container
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: trafficmgmt-redis-container
+  template:
+    metadata:
+      labels:
+        app: trafficmgmt-redis-container
+    spec:
+      containers:
+      - name: redis
+        image: redis:latest
+        command: ["redis-server"]
+        ports:
+        - containerPort: 6379
+          name: client
+        - containerPort: 16379
+          name: gossip

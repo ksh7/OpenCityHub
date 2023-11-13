@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  labels:
+    component: trafficmgmt-celeryapp-container
+  name: trafficmgmt-celeryapp-container
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: trafficmgmt-celeryapp-container
+        component: trafficmgmt-celeryapp-container
+    spec:
+      containers:
+      - image: quay.io/aenvsite/traffic_management
+        name: trafficmgmt-celeryapp-container
+        command: [ "/bin/sh","-c" ]
+        args: [ "celery -A web_app worker -l info;" ]
+        envFrom:
+        - configMapRef:
+            name: trafficmgmt-configmap

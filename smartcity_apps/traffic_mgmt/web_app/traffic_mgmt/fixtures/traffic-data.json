@@ -1,0 +1,793 @@
+[
+    {
+      "model": "traffic_mgmt.emergencyservice",
+      "pk": 1,
+      "fields": {
+        "name": "City Ambulance Services",
+        "description": "Providing emergency medical services 24/7."
+      }
+    },
+    {
+      "model": "traffic_mgmt.emergencyservice",
+      "pk": 2,
+      "fields": {
+        "name": "Fire Rescue Department",
+        "description": "Responding to fire emergencies and rescuing people in hazardous situations."
+      }
+    },
+    {
+      "model": "traffic_mgmt.emergencyservice",
+      "pk": 3,
+      "fields": {
+        "name": "Police Emergency Response Unit",
+        "description": "Ensuring public safety and responding to criminal activities."
+      }
+    },
+    {
+      "model": "traffic_mgmt.emergencyservice",
+      "pk": 4,
+      "fields": {
+        "name": "Search and Rescue Team",
+        "description": "Specialized team for locating and rescuing missing persons or those in distress."
+      }
+    },
+    {
+      "model": "traffic_mgmt.emergencyservice",
+      "pk": 5,
+      "fields": {
+        "name": "National Disaster Relief Force",
+        "description": "Providing assistance during natural disasters and emergencies on a national level."
+      }
+    },
+    {
+      "model": "traffic_mgmt.location",
+      "pk": 1,
+      "fields": {
+        "latitude": 40.7128,
+        "longitude": -74.0060,
+        "address": "Times Square",
+        "city": "New York"
+      }
+    },
+    {
+      "model": "traffic_mgmt.location",
+      "pk": 2,
+      "fields": {
+        "latitude": 40.7589,
+        "longitude": -73.9851,
+        "address": "Central Park",
+        "city": "New York"
+      }
+    },
+    {
+      "model": "traffic_mgmt.location",
+      "pk": 3,
+      "fields": {
+        "latitude": 40.7060,
+        "longitude": -74.0088,
+        "address": "Statue of Liberty",
+        "city": "New York"
+      }
+    },
+    {
+      "model": "traffic_mgmt.location",
+      "pk": 4,
+      "fields": {
+        "latitude": 40.7484,
+        "longitude": -73.9857,
+        "address": "Empire State Building",
+        "city": "New York"
+      }
+    },
+    {
+      "model": "traffic_mgmt.location",
+      "pk": 5,
+      "fields": {
+        "latitude": 40.7680,
+        "longitude": -73.9826,
+        "address": "Rockefeller Center",
+        "city": "New York"
+      }
+    },
+    {
+      "model": "traffic_mgmt.location",
+      "pk": 6,
+      "fields": {
+        "latitude": 40.7412,
+        "longitude": -74.0059,
+        "address": "Chinatown",
+        "city": "New York"
+      }
+    },
+    {
+      "model": "traffic_mgmt.location",
+      "pk": 7,
+      "fields": {
+        "latitude": 40.7831,
+        "longitude": -73.9712,
+        "address": "The Metropolitan Museum of Art",
+        "city": "New York"
+      }
+    },
+    {
+      "model": "traffic_mgmt.location",
+      "pk": 8,
+      "fields": {
+        "latitude": 40.7291,
+        "longitude": -73.9965,
+        "address": "Brooklyn Bridge",
+        "city": "New York"
+      }
+    },
+    {
+      "model": "traffic_mgmt.location",
+      "pk": 9,
+      "fields": {
+        "latitude": 40.7679,
+        "longitude": -73.9790,
+        "address": "Grand Central Terminal",
+        "city": "New York"
+      }
+    },
+    {
+      "model": "traffic_mgmt.location",
+      "pk": 10,
+      "fields": {
+        "latitude": 40.7127,
+        "longitude": -74.0134,
+        "address": "Battery Park",
+        "city": "New York"
+      }
+    },
+    {
+      "model": "traffic_mgmt.location",
+      "pk": 11,
+      "fields": {
+        "latitude": 40.7512,
+        "longitude": -73.9885,
+        "address": "Bryant Park",
+        "city": "New York"
+      }
+    },
+    {
+      "model": "traffic_mgmt.location",
+      "pk": 12,
+      "fields": {
+        "latitude": 40.7140,
+        "longitude": -74.0086,
+        "address": "World Trade Center",
+        "city": "New York"
+      }
+    },
+    {
+      "model": "traffic_mgmt.location",
+      "pk": 13,
+      "fields": {
+        "latitude": 40.7670,
+        "longitude": -73.9930,
+        "address": "Museum of Modern Art (MoMA)",
+        "city": "New York"
+      }
+    },
+    {
+      "model": "traffic_mgmt.location",
+      "pk": 14,
+      "fields": {
+        "latitude": 40.7392,
+        "longitude": -74.0009,
+        "address": "Greenwich Village",
+        "city": "New York"
+      }
+    },
+    {
+      "model": "traffic_mgmt.location",
+      "pk": 15,
+      "fields": {
+        "latitude": 40.7758,
+        "longitude": -73.9762,
+        "address": "Upper East Side",
+        "city": "New York"
+      }
+    },
+    {
+      "model": "traffic_mgmt.location",
+      "pk": 16,
+      "fields": {
+        "latitude": 40.7293,
+        "longitude": -74.0060,
+        "address": "Chelsea Market",
+        "city": "New York"
+      }
+    },
+    {
+      "model": "traffic_mgmt.location",
+      "pk": 17,
+      "fields": {
+        "latitude": 40.7694,
+        "longitude": -73.9865,
+        "address": "Times Square",
+        "city": "New York"
+      }
+    },
+    {
+      "model": "traffic_mgmt.location",
+      "pk": 18,
+      "fields": {
+        "latitude": 40.7456,
+        "longitude": -73.9914,
+        "address": "Flatiron Building",
+        "city": "New York"
+      }
+    },
+    {
+      "model": "traffic_mgmt.location",
+      "pk": 19,
+      "fields": {
+        "latitude": 40.7401,
+        "longitude": -74.0078,
+        "address": "High Line Park",
+        "city": "New York"
+      }
+    },
+    {
+      "model": "traffic_mgmt.location",
+      "pk": 20,
+      "fields": {
+        "latitude": 40.7650,
+        "longitude": -73.9793,
+        "address": "United Nations Headquarters",
+        "city": "New York"
+      }
+    },
+    {
+        "model": "traffic_mgmt.emergencyvehicle",
+        "pk": 1,
+        "fields": {
+            "service": 1,
+            "vehicle_number": "ABC123",
+            "current_location": 1
+        }
+    },
+    {
+        "model": "traffic_mgmt.emergencyvehicle",
+        "pk": 2,
+        "fields": {
+            "service": 1,
+            "vehicle_number": "XYZ789",
+            "current_location": 5
+        }
+    },
+    {
+        "model": "traffic_mgmt.emergencyvehicle",
+        "pk": 3,
+        "fields": {
+            "service": 2,
+            "vehicle_number": "DEF456",
+            "current_location": 10
+        }
+    },
+    {
+        "model": "traffic_mgmt.emergencyvehicle",
+        "pk": 4,
+        "fields": {
+            "service": 3,
+            "vehicle_number": "GHI789",
+            "current_location": 15
+        }
+    },
+    {
+        "model": "traffic_mgmt.emergencyvehicle",
+        "pk": 5,
+        "fields": {
+            "service": 4,
+            "vehicle_number": "JKL012",
+            "current_location": 20
+        }
+    },
+    {
+        "model": "traffic_mgmt.emergencyvehicle",
+        "pk": 6,
+        "fields": {
+            "service": 1,
+            "vehicle_number": "MNO345",
+            "current_location": 2
+        }
+    },
+    {
+        "model": "traffic_mgmt.emergencyvehicle",
+        "pk": 7,
+        "fields": {
+            "service": 2,
+            "vehicle_number": "PQR678",
+            "current_location": 7
+        }
+    },
+    {
+        "model": "traffic_mgmt.emergencyvehicle",
+        "pk": 8,
+        "fields": {
+            "service": 3,
+            "vehicle_number": "STU901",
+            "current_location": 12
+        }
+    },
+    {
+        "model": "traffic_mgmt.emergencyvehicle",
+        "pk": 9,
+        "fields": {
+            "service": 4,
+            "vehicle_number": "VWX234",
+            "current_location": 17
+        }
+    },
+    {
+        "model": "traffic_mgmt.emergencyvehicle",
+        "pk": 10,
+        "fields": {
+            "service": 5,
+            "vehicle_number": "YZA567",
+            "current_location": 3
+        }
+    },
+    {
+        "model": "traffic_mgmt.route",
+        "pk": 1,
+        "fields": {
+            "name": "Downtown Express",
+            "start_location": 1,
+            "end_location": 5,
+            "waypoints": [2, 3, 4]
+        }
+    },
+    {
+        "model": "traffic_mgmt.route",
+        "pk": 2,
+        "fields": {
+            "name": "Uptown Loop",
+            "start_location": 6,
+            "end_location": 10,
+            "waypoints": [7, 8, 9]
+        }
+    },
+    {
+        "model": "traffic_mgmt.route",
+        "pk": 3,
+        "fields": {
+            "name": "Cross-town Connection",
+            "start_location": 11,
+            "end_location": 15,
+            "waypoints": [12, 13, 14]
+        }
+    },
+    {
+        "model": "traffic_mgmt.route",
+        "pk": 4,
+        "fields": {
+            "name": "Riverfront Route",
+            "start_location": 16,
+            "end_location": 20,
+            "waypoints": [17, 18, 19]
+        }
+    },
+    {
+        "model": "traffic_mgmt.route",
+        "pk": 5,
+        "fields": {
+            "name": "Central Park Cruise",
+            "start_location": 2,
+            "end_location": 18,
+            "waypoints": [3, 4, 5, 8, 12, 16]
+        }
+    },
+    {
+        "model": "traffic_mgmt.route",
+        "pk": 6,
+        "fields": {
+            "name": "Skyline Serenade",
+            "start_location": 1,
+            "end_location": 20,
+            "waypoints": [5, 10, 15]
+        }
+    },
+    {
+        "model": "traffic_mgmt.route",
+        "pk": 7,
+        "fields": {
+            "name": "Brooklyn Bound",
+            "start_location": 7,
+            "end_location": 13,
+            "waypoints": [8, 9, 10, 11, 12]
+        }
+    },
+    {
+        "model": "traffic_mgmt.route",
+        "pk": 8,
+        "fields": {
+            "name": "Queens Connector",
+            "start_location": 14,
+            "end_location": 19,
+            "waypoints": [15, 16, 17, 18]
+        }
+    },
+    {
+        "model": "traffic_mgmt.route",
+        "pk": 9,
+        "fields": {
+            "name": "Harbor Highlights",
+            "start_location": 3,
+            "end_location": 17,
+            "waypoints": [4, 5, 10, 12, 15]
+        }
+    },
+    {
+        "model": "traffic_mgmt.route",
+        "pk": 10,
+        "fields": {
+            "name": "Statue of Liberty Tour",
+            "start_location": 1,
+            "end_location": 20,
+            "waypoints": [2, 3, 4, 5, 8, 12, 16]
+        }
+    },
+    {
+        "model": "traffic_mgmt.route",
+        "pk": 11,
+        "fields": {
+            "name": "Midtown Madness",
+            "start_location": 6,
+            "end_location": 15,
+            "waypoints": [7, 8, 9, 10, 11, 12, 13, 14]
+        }
+    },
+    {
+        "model": "traffic_mgmt.route",
+        "pk": 12,
+        "fields": {
+            "name": "Fifth Avenue Fling",
+            "start_location": 2,
+            "end_location": 18,
+            "waypoints": [3, 4, 5, 8, 12, 16, 20]
+        }
+    },
+    {
+        "model": "traffic_mgmt.route",
+        "pk": 13,
+        "fields": {
+            "name": "Grand Central Gateway",
+            "start_location": 1,
+            "end_location": 19,
+            "waypoints": [2, 3, 4, 5, 8, 12, 16, 18]
+        }
+    },
+    {
+        "model": "traffic_mgmt.route",
+        "pk": 14,
+        "fields": {
+            "name": "Empire State Excursion",
+            "start_location": 7,
+            "end_location": 14,
+            "waypoints": [8, 9, 10, 11, 12, 13, 16]
+        }
+    },
+    {
+        "model": "traffic_mgmt.route",
+        "pk": 15,
+        "fields": {
+            "name": "Chinatown Circuit",
+            "start_location": 2,
+            "end_location": 16,
+            "waypoints": [3, 4, 5, 8, 12, 18]
+        }
+    },
+    {
+        "model": "traffic_mgmt.route",
+        "pk": 16,
+        "fields": {
+            "name": "Theater District Trek",
+            "start_location": 6,
+            "end_location": 20,
+            "waypoints": [7, 8, 9, 10, 11, 12, 13, 16, 18]
+        }
+    },
+    {
+        "model": "traffic_mgmt.route",
+        "pk": 17,
+        "fields": {
+            "name": "Flatiron Fantasy",
+            "start_location": 1,
+            "end_location": 15,
+            "waypoints": [2, 3, 4, 5, 8, 12, 16, 18]
+        }
+    },
+    {
+        "model": "traffic_mgmt.route",
+        "pk": 18,
+        "fields": {
+            "name": "Soho Stroll",
+            "start_location": 7,
+            "end_location": 19,
+            "waypoints": [8, 9, 10, 11, 12, 13, 16, 17, 18]
+        }
+    },
+    {
+        "model": "traffic_mgmt.route",
+        "pk": 19,
+        "fields": {
+            "name": "Greenwich Village Voyage",
+            "start_location": 2,
+            "end_location": 14,
+            "waypoints": [3, 4, 5, 8, 12, 16, 18]
+        }
+    },
+    {
+        "model": "traffic_mgmt.route",
+        "pk": 20,
+        "fields": {
+            "name": "Battery Park Bliss",
+            "start_location": 6,
+            "end_location": 20,
+            "waypoints": [7, 8, 9, 10, 11, 12, 13, 16, 18]
+        }
+    },
+    {
+        "model": "traffic_mgmt.emergencycall",
+        "pk": 1,
+        "fields": {
+            "timestamp": "2023-10-05T10:30:00Z",
+            "caller_name": "John Doe",
+            "caller_contact": "555-1234",
+            "location": 1,
+            "emergency_service": 1,
+            "assigned_vehicle": 1,
+            "status": "Pending"
+        }
+    },
+    {
+        "model": "traffic_mgmt.emergencycall",
+        "pk": 2,
+        "fields": {
+            "timestamp": "2023-10-06T15:45:00Z",
+            "caller_name": "Jane Smith",
+            "caller_contact": "555-5678",
+            "location": 5,
+            "emergency_service": 2,
+            "assigned_vehicle": 2,
+            "status": "In Progress"
+        }
+    },
+    {
+        "model": "traffic_mgmt.emergencycall",
+        "pk": 3,
+        "fields": {
+            "timestamp": "2023-10-07T08:20:00Z",
+            "caller_name": "Bob Johnson",
+            "caller_contact": "555-9012",
+            "location": 10,
+            "emergency_service": 3,
+            "assigned_vehicle": 3,
+            "status": "Completed"
+        }
+    },
+    {
+        "model": "traffic_mgmt.emergencycall",
+        "pk": 4,
+        "fields": {
+            "timestamp": "2023-10-08T14:10:00Z",
+            "caller_name": "Alice Williams",
+            "caller_contact": "555-3456",
+            "location": 15,
+            "emergency_service": 4,
+            "assigned_vehicle": 4,
+            "status": "Pending"
+        }
+    },
+    {
+        "model": "traffic_mgmt.emergencycall",
+        "pk": 5,
+        "fields": {
+            "timestamp": "2023-10-09T11:55:00Z",
+            "caller_name": "Chris Brown",
+            "caller_contact": "555-7890",
+            "location": 20,
+            "emergency_service": 5,
+            "assigned_vehicle": 5,
+            "status": "In Progress"
+        }
+    },
+    {
+        "model": "traffic_mgmt.emergencycall",
+        "pk": 6,
+        "fields": {
+            "timestamp": "2023-10-05T18:30:00Z",
+            "caller_name": "Emily Davis",
+            "caller_contact": "555-1111",
+            "location": 2,
+            "emergency_service": 1,
+            "assigned_vehicle": 1,
+            "status": "Pending"
+        }
+    },
+    {
+        "model": "traffic_mgmt.emergencycall",
+        "pk": 7,
+        "fields": {
+            "timestamp": "2023-10-06T12:15:00Z",
+            "caller_name": "Greg Turner",
+            "caller_contact": "555-2222",
+            "location": 7,
+            "emergency_service": 2,
+            "assigned_vehicle": 2,
+            "status": "In Progress"
+        }
+    },
+    {
+        "model": "traffic_mgmt.emergencycall",
+        "pk": 8,
+        "fields": {
+            "timestamp": "2023-10-07T09:45:00Z",
+            "caller_name": "Linda Miller",
+            "caller_contact": "555-3333",
+            "location": 12,
+            "emergency_service": 3,
+            "assigned_vehicle": 3,
+            "status": "Completed"
+        }
+    },
+    {
+        "model": "traffic_mgmt.emergencycall",
+        "pk": 9,
+        "fields": {
+            "timestamp": "2023-10-08T16:55:00Z",
+            "caller_name": "Mike Harris",
+            "caller_contact": "555-4444",
+            "location": 17,
+            "emergency_service": 4,
+            "assigned_vehicle": 4,
+            "status": "Pending"
+        }
+    },
+    {
+        "model": "traffic_mgmt.emergencycall",
+        "pk": 10,
+        "fields": {
+            "timestamp": "2023-10-09T13:40:00Z",
+            "caller_name": "Nancy Wilson",
+            "caller_contact": "555-5555",
+            "location": 3,
+            "emergency_service": 5,
+            "assigned_vehicle": 5,
+            "status": "In Progress"
+        }
+    },
+    {
+        "model": "traffic_mgmt.emergencycall",
+        "pk": 11,
+        "fields": {
+            "timestamp": "2023-10-05T08:05:00Z",
+            "caller_name": "Oscar Moore",
+            "caller_contact": "555-6666",
+            "location": 4,
+            "emergency_service": 1,
+            "assigned_vehicle": 1,
+            "status": "Pending"
+        }
+    },
+    {
+        "model": "traffic_mgmt.emergencycall",
+        "pk": 12,
+        "fields": {
+            "timestamp": "2023-10-06T14:25:00Z",
+            "caller_name": "Pamela White",
+            "caller_contact": "555-7777",
+            "location": 8,
+            "emergency_service": 2,
+            "assigned_vehicle": 2,
+            "status": "In Progress"
+        }
+    },
+    {
+        "model": "traffic_mgmt.emergencycall",
+        "pk": 13,
+        "fields": {
+            "timestamp": "2023-10-07T07:10:00Z",
+            "caller_name": "Quincy King",
+            "caller_contact": "555-8888",
+            "location": 13,
+            "emergency_service": 3,
+            "assigned_vehicle": 3,
+            "status": "Completed"
+        }
+    },
+    {
+        "model": "traffic_mgmt.emergencycall",
+        "pk": 14,
+        "fields": {
+            "timestamp": "2023-10-08T15:30:00Z",
+            "caller_name": "Rachel Scott",
+            "caller_contact": "555-9999",
+            "location": 18,
+            "emergency_service": 4,
+            "assigned_vehicle": 4,
+            "status": "Pending"
+        }
+    },
+    {
+        "model": "traffic_mgmt.emergencycall",
+        "pk": 15,
+        "fields": {
+            "timestamp": "2023-10-09T12:00:00Z",
+            "caller_name": "Samuel Hall",
+            "caller_contact": "555-0000",
+            "location": 5,
+            "emergency_service": 5,
+            "assigned_vehicle": 5,
+            "status": "In Progress"
+        }
+    },
+    {
+        "model": "traffic_mgmt.emergencycall",
+        "pk": 16,
+        "fields": {
+            "timestamp": "2023-10-05T19:45:00Z",
+            "caller_name": "Tina Bell",
+            "caller_contact": "555-1234",
+            "location": 10,
+            "emergency_service": 1,
+            "assigned_vehicle": 1,
+            "status": "Pending"
+        }
+    },
+    {
+        "model": "traffic_mgmt.emergencycall",
+        "pk": 17,
+        "fields": {
+            "timestamp": "2023-10-06T11:20:00Z",
+            "caller_name": "Victor Reed",
+            "caller_contact": "555-5678",
+            "location": 15,
+            "emergency_service": 2,
+            "assigned_vehicle": 2,
+            "status": "In Progress"
+        }
+    },
+    {
+        "model": "traffic_mgmt.emergencycall",
+        "pk": 18,
+        "fields": {
+            "timestamp": "2023-10-07T10:35:00Z",
+            "caller_name": "Wendy Brown",
+            "caller_contact": "555-9012",
+            "location": 20,
+            "emergency_service": 3,
+            "assigned_vehicle": 3,
+            "status": "Completed"
+        }
+    },
+    {
+        "model": "traffic_mgmt.emergencycall",
+        "pk": 19,
+        "fields": {
+            "timestamp": "2023-10-08T17:15:00Z",
+            "caller_name": "Xavier Taylor",
+            "caller_contact": "555-3456",
+            "location": 2,
+            "emergency_service": 4,
+            "assigned_vehicle": 4,
+            "status": "Pending"
+        }
+    },
+    {
+        "model": "traffic_mgmt.emergencycall",
+        "pk": 20,
+        "fields": {
+            "timestamp": "2023-10-09T14:50:00Z",
+            "caller_name": "Yvonne Green",
+            "caller_contact": "555-7890",
+            "location": 7,
+            "emergency_service": 5,
+            "assigned_vehicle": 5,
+            "status": "In Progress"
+        }
+    }
+  ]
+  

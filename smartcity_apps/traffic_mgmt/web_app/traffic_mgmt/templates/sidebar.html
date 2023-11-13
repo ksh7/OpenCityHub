@@ -1,0 +1,82 @@
+<!-- ======= Sidebar ======= -->
+{% load static %}
+{% if request.user.is_authenticated %}
+<aside id="sidebar" class="sidebar">
+
+  <ul class="sidebar-nav" id="sidebar-nav">
+
+    <li class="nav-item">
+      <a class="nav-link " href="{% url 'dashboard' %}">
+        <i class="bi bi-grid"></i>
+        <span>Dashboard</span>
+      </a>
+    </li><!-- End Dashboard Nav -->
+    <li class="nav-item">
+      <a class="nav-link collapsed" data-bs-target="#route-nav" data-bs-toggle="collapse" href="#">
+        <i class="bi bi-compass"></i><span>Emergency Planning</span><i class="bi bi-chevron-down ms-auto"></i>
+      </a>
+      <ul id="route-nav" class="nav-content collapse" data-bs-parent="#sidebar-nav">
+        <li>
+          <a href="{% url 'plan_route' %}">
+            <i class="bi bi-telephone-forward"></i><span>Plan A Route</span>
+          </a>
+        </li>
+        <li>
+          <a href="{% url 'emergency_calls' %}">
+            <i class="bi bi-telephone-forward"></i><span>Emergency Responses</span>
+          </a>
+        </li>
+        <li>
+          <a href="{% url 'emergency_services' %}">
+            <i class="bi bi-building"></i><span>Emergency Services</span>
+          </a>
+        </li>
+        <li>
+          <a href="{% url 'emergency_vehicles' %}">
+            <i class="bi bi-grid-1x2"></i><span>Emergency Vehicles</span>
+          </a>
+        </li>
+      </ul>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link collapsed" data-bs-target="#alerts-nav" data-bs-toggle="collapse" href="#">
+        <i class="bi bi-megaphone"></i><span>Traffic Jam Alerts</span><i class="bi bi-chevron-down ms-auto"></i>
+      </a>
+      <ul id="alerts-nav" class="nav-content collapse" data-bs-parent="#sidebar-nav">
+        <li>
+          <a href="{% url 'alert_logs' %}">
+            <i class="bi bi-telephone-forward"></i><span>Alert Logs</span>
+          </a>
+        </li>
+        <li>
+          <a href="{% url 'generate_advisory' %}">
+            <i class="bi bi-telephone-forward"></i><span>Generate An Advisory</span>
+          </a>
+        </li>
+      </ul>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link collapsed" href="{% url 'serverless_apps' %}">
+        <i class="bi bi-box-seam"></i>
+        <span>Serverless Apps</span>
+      </a>
+    </li><!-- End Dashboard Nav -->
+    <li class="nav-item">
+      <a class="nav-link collapsed" href="{% url 'openshift_cloud' %}">
+        <i class="bi bi-server"></i>
+        <span>OpenShift Cloud</span>
+      </a>
+    </li><!-- End Profile Page Nav -->
+
+    <li class="nav-heading">Settings</li>
+    <li class="nav-item">
+      <a class="nav-link collapsed" href="{% url 'profile_settings' %}">
+        <i class="bi bi-gear"></i>
+        <span>My Profile</span>
+      </a>
+    </li><!-- End F.A.Q Page Nav -->
+
+  </ul>
+
+</aside><!-- End Sidebar-->
+{% endif %}

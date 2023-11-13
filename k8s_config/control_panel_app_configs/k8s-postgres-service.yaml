@@ -1,0 +1,11 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: controlpanel-postgres-service
+spec:
+  selector:
+    app: controlpanel-postgres-container
+  ports:
+    - protocol: TCP
+      port: 5432
+      targetPort: 5432

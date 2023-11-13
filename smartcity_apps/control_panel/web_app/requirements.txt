@@ -1,0 +1,14 @@
+django
+django-bootstrap5
+django-crispy-forms
+whitenoise
+psycopg2
+psycopg2-binary
+django-htmx
+gunicorn
+celery
+redis
+pika
+faker
+requests
+openai

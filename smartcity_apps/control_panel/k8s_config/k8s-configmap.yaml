@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: controlpanel-configmap
+data:
+  POSTGRES_DB: 'control_panel'
+  POSTGRES_USER: 'postgres'
+  POSTGRES_PASSWORD: 'pass1234'
+  POSTGRES_HOST: 'controlpanel-postgres-service'
+  POSTGRES_PORT: '5432'
+  CELERYAPP_HOST: 'controlpanel-celeryapp-service'
+  RABBITMQ_HOST: 'amqps-uri'
+  RABBITMQ_QUEUE: 'control_panel'
+  OPENAI_API_KEY: 'api-key'

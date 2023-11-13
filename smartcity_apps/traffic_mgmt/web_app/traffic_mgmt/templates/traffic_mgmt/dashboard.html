@@ -1,0 +1,322 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+
+<div class="pagetitle">
+  <h1>Dashboard</h1>
+  <nav>
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="/">Home</a></li>
+      <li class="breadcrumb-item active">Dashboard</li>
+    </ol>
+  </nav>
+</div><!-- End Page Title -->
+
+<section class="section dashboard">
+  <div class="row">
+
+    <!-- Left side columns -->
+    <div class="col-lg-8">
+      <div class="row">
+
+        <!-- Sales Card -->
+        <div class="col-md-4">
+          <div class="card info-card sales-card">
+
+            <div class="filter">
+              <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+              <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                <li class="dropdown-header text-start">
+                  <h6>Filter</h6>
+                </li>
+
+                <li><a class="dropdown-item" href="#">Today</a></li>
+                <li><a class="dropdown-item" href="#">This Month</a></li>
+                <li><a class="dropdown-item" href="#">This Year</a></li>
+              </ul>
+            </div>
+
+            <div class="card-body">
+              <h5 class="card-title">Traffic Jams <span>| Today</span></h5>
+              <div class="d-flex align-items-center">
+                <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                  <i class="bi bi-geo-alt"></i>
+                </div>
+                <div class="ps-3">
+                  <h6>20</h6>
+                  <span class="text-success small pt-1 fw-bold">15%</span> <span
+                    class="text-muted small pt-2 ps-1">decrease</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div><!-- End Sales Card -->
+
+        <!-- Revenue Card -->
+        <div class="col-md-4">
+          <div class="card info-card customers-card">
+
+            <div class="filter">
+              <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+              <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                <li class="dropdown-header text-start">
+                  <h6>Filter</h6>
+                </li>
+
+                <li><a class="dropdown-item" href="#">Today</a></li>
+                <li><a class="dropdown-item" href="#">This Month</a></li>
+                <li><a class="dropdown-item" href="#">This Year</a></li>
+              </ul>
+            </div>
+
+            <div class="card-body">
+              <h5 class="card-title">Accidents <span>| Today</span></h5>
+              <div class="d-flex align-items-center">
+                <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                  <i class="bi bi-exclamation-triangle-fill"></i>
+                </div>
+                <div class="ps-3">
+                  <h6>2</h6>
+                  <span class="text-danger small pt-1 fw-bold">0</span> <span
+                    class="text-muted small pt-2 ps-1">casualties</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div><!-- End Revenue Card -->
+
+        <!-- Customers Card -->
+        <div class="col-md-4">
+
+          <div class="card info-card revenue-card">
+
+            <div class="filter">
+              <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+              <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                <li class="dropdown-header text-start">
+                  <h6>Filter</h6>
+                </li>
+
+                <li><a class="dropdown-item" href="#">Today</a></li>
+                <li><a class="dropdown-item" href="#">This Month</a></li>
+                <li><a class="dropdown-item" href="#">This Year</a></li>
+              </ul>
+            </div>
+
+            <div class="card-body">
+              <h5 class="card-title">Average Jam <span>| Today</span></h5>
+              <div class="d-flex align-items-center">
+                <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                  <i class="bi bi-columns-gap"></i>
+                </div>
+                <div class="ps-3">
+                  <h6>25</h6>
+                  <span class="text-success small pt-1 fw-bold">8%</span> <span
+                    class="text-muted small pt-2 ps-1">increase</span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div><!-- End Customers Card -->
+
+      </div>
+      <div class="row">
+
+        <!-- Sales Card -->
+        <div class="col-md-12">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Traffic Management | <span>7 Days</span></h5>
+
+              <!-- Traffic Line Chart -->
+              <canvas id="trafficChart"
+                style="max-height: 400px; display: block; box-sizing: border-box; height: 299px; width: 599px;"
+                width="599" height="299"></canvas>
+              <script>
+                document.addEventListener("DOMContentLoaded", () => {
+                  new Chart(document.querySelector('#trafficChart'), {
+                    type: 'line',
+                    data: {
+                      labels: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+                      datasets: [
+                        {
+                          label: 'Route A',
+                          data: [10, 12, 15, 18, 14, 16, 11],
+                          fill: false,
+                          borderColor: 'rgb(255, 99, 132)',
+                          tension: 0.1
+                        },
+                        {
+                          label: 'Route B',
+                          data: [8, 10, 14, 12, 16, 18, 13],
+                          fill: false,
+                          borderColor: 'rgb(54, 162, 235)',
+                          tension: 0.1
+                        },
+                        {
+                          label: 'Route C',
+                          data: [15, 18, 20, 22, 25, 24, 17],
+                          fill: false,
+                          borderColor: 'rgb(75, 192, 192)',
+                          tension: 0.1
+                        }
+                      ]
+                    },
+                    options: {
+                      scales: {
+                        x: {
+                          grid: {
+                            display: false
+                          }
+                        },
+                        y: {
+                          beginAtZero: true,
+                          grid: {
+                            display: false
+                          }
+                        }
+                      }
+                    }
+                  });
+                });
+              </script>
+              <!-- End Traffic Line Chart -->
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div><!-- End Left side columns -->
+
+    <!-- Right side columns -->
+    <div class="col-lg-4">
+
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Transportation Overview | <span>Current</span></h5>
+
+          <canvas id="transportationDoughnutChart"
+            style="max-height: 400px; display: block; box-sizing: border-box; height: 400px; width: 599px;" width="599"
+            height="400"></canvas>
+          <script>
+            document.addEventListener("DOMContentLoaded", () => {
+              new Chart(document.querySelector('#transportationDoughnutChart'), {
+                type: 'doughnut',
+                data: {
+                  labels: [
+                    'Private Cars',
+                    'Public Transportation',
+                    'Cycling',
+                    'Walking'
+                  ],
+                  datasets: [{
+                    label: 'Transportation Modes',
+                    data: [40, 30, 15, 15], // Update with your actual data percentages
+                    backgroundColor: [
+                      'rgb(255, 99, 132)',
+                      'rgb(75, 192, 192)',
+                      'rgb(255, 205, 86)',
+                      'rgb(54, 162, 235)'
+                    ],
+                    hoverOffset: 4
+                  }]
+                }
+              });
+            });
+          </script>
+          <!-- End Doughnut Chart -->
+
+        </div>
+      </div>
+
+
+      <!-- Recent Activity -->
+      <!-- End Recent Activity -->
+
+    </div><!-- End Right side columns -->
+
+  </div>
+  <div class="row">
+    
+    <div class="card">
+      <div class="filter">
+        <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+        <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+          <li class="dropdown-header text-start">
+            <h6>Filter</h6>
+          </li>
+          <li><a class="dropdown-item" href="#">Today</a></li>
+          <li><a class="dropdown-item" href="#">This Month</a></li>
+          <li><a class="dropdown-item" href="#">This Year</a></li>
+        </ul>
+      </div>
+    
+      <div class="card-body">
+        <h5 class="card-title">Recent Traffic Management Activity <span>| Today</span></h5>
+    
+        <div class="activity">
+    
+          <div class="activity-item d-flex">
+            <div class="activite-label">32 min</div>
+            <i class='bi bi-circle-fill activity-badge text-success align-self-start'></i>
+            <div class="activity-content">
+              Optimal traffic flow achieved in downtown ABC 4 zone based on real-time sensor data.
+            </div>
+          </div><!-- End activity item-->
+    
+          <div class="activity-item d-flex">
+            <div class="activite-label">56 min</div>
+            <i class='bi bi-circle-fill activity-badge text-danger align-self-start'></i>
+            <div class="activity-content">
+              Unusual traffic congestion detected in ABC 1 area. Investigation initiated.
+            </div>
+          </div><!-- End activity item-->
+    
+          <div class="activity-item d-flex">
+            <div class="activite-label">2 hrs</div>
+            <i class='bi bi-circle-fill activity-badge text-primary align-self-start'></i>
+            <div class="activity-content">
+              Automated maintenance scheduled for ABC 2 system to optimize traffic signal timings and collection routes.
+            </div>
+          </div><!-- End activity item-->
+    
+          <div class="activity-item d-flex">
+            <div class="activite-label">1 day</div>
+            <i class='bi bi-circle-fill activity-badge text-info align-self-start'></i>
+            <div class="activity-content">
+              Anomaly detected in traffic flow near ABC 1 zone. Alert issued for immediate attention.
+            </div>
+          </div><!-- End activity item-->
+    
+          <div class="activity-item d-flex">
+            <div class="activite-label">2 days</div>
+            <i class='bi bi-circle-fill activity-badge text-warning align-self-start'></i>
+            <div class="activity-content">
+              Predicted traffic congestion in ABC 5 zone. Preemptive measures underway to alleviate potential issues.
+            </div>
+          </div><!-- End activity item-->
+    
+          <div class="activity-item d-flex">
+            <div class="activite-label">4 weeks</div>
+            <i class='bi bi-circle-fill activity-badge text-muted align-self-start'></i>
+            <div class="activity-content">
+              Upgrade completed for ABC 1 system. Improved efficiency in traffic signal management and overall traffic flow.
+            </div>
+          </div><!-- End activity item-->
+    
+        </div>
+    
+      </div>
+    
+    </div>
+    
+  </div>
+</section>
+
+
+{% endblock%}

@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="row g-0">
+  <div class="col-md-10 offset-md-1">
+    <div class="container my-3">
+      <div class="row align-items-center">
+        <div class="col">
+          <h1>Serverless Functions Apps</h1>
+        </div>
+        <div class="col-auto">
+          <a href="{% url 'serverless_app_create' %}" class="btn btn-outline-primary rounded-pill"><i class="bi bi-plus"></i> Add New App </a>
+        </div>
+      </div>
+    </div>
+    {% for app in apps %}
+    <div class="card mb-3">
+      <div class="row g-0">
+        <div class="col-md-2">
+          <i class="bi bi-bezier2" style="font-size: 150px;"></i>
+        </div>
+        <div class="col-md-10">
+          <div class="card-body">
+            <h5 class="card-title">{{app.name}}</h5>
+            <p class="card-text">{{app.description}}</p>
+            <p class="card-text">
+                <a href="{{app.access_url}}" target="_blank" class="btn btn-sm btn-primary rounded-pill"><i class="bi bi-link"></i> Access URL</a>
+                <a href="{% url 'serverless_app_edit' app.id %}" class="btn btn-sm btn-primary rounded-pill"><i class="bi bi-pencil"></i> Edit App</a>
+              </p>
+            <p class="card-text">
+              <a href="#" class="btn btn-sm btn-outline-primary rounded-pill"><i class="bi bi-github"></i>
+                Function Code</a>
+              <a href="{{app.docker_image}}" target="_blank" class="btn btn-sm btn-outline-primary rounded-pill"><i class="bi bi-cloud"></i>
+                Docker Image </a>
+              <a href="#" class="btn btn-sm btn-outline-primary rounded-pill"><i class="bi bi-gear-fill"></i> Kubernetes
+                Config </a>
+              <a href="#" class="btn btn-sm btn-outline-primary rounded-pill"><i class="bi bi-node-plus-fill"></i>
+                Deploy To OpenShift </a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock%}

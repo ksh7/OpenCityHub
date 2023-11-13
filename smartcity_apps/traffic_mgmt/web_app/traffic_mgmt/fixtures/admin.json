@@ -1,0 +1,58 @@
+[
+    {
+      "model": "traffic_mgmt.user",
+      "pk": 1,
+      "fields": {
+        "email": "admin@opencityhub.test",
+        "password": "pbkdf2_sha256$600000$UbIBNHimgYGNdVlSdjLxYn$6tvMy8n9oJDYV7Zva42xYaOA/di7WuzzaOK6lA2e1eY=",
+        "username": "admin",
+        "is_superuser": true,
+        "is_staff": true,
+        "is_active": true,
+        "name": "Admin User"}
+    },
+    {
+      "model": "traffic_mgmt.user",
+      "pk": 2,
+      "fields": {
+        "email": "staff1@opencityhub.test",
+        "password": "pbkdf2_sha256$600000$2XXhavzH0cnCWd7w9PD99M$W2Pv3d9V40aCWR/mzmQj8V1sFkE3FgmVwhF4MbQ9rPc=",
+        "username": "staff",
+        "is_superuser": false,
+        "is_staff": true,
+        "is_active": true,
+        "name": "Staff User 1"}
+    },
+    {
+      "model": "traffic_mgmt.user",
+      "pk": 3,
+      "fields": {
+        "email": "staff2@opencityhub.test",
+        "password": "pbkdf2_sha256$600000$2XXhavzH0cnCWd7w9PD99M$W2Pv3d9V40aCWR/mzmQj8V1sFkE3FgmVwhF4MbQ9rPc=",
+        "username": "staff",
+        "is_superuser": false,
+        "is_staff": true,
+        "is_active": true,
+        "name": "Staff User 2"}
+    },
+    {
+      "model": "traffic_mgmt.user",
+      "pk": 4,
+      "fields": {
+        "email": "user1@opencityhub.test",
+        "password": "pbkdf2_sha256$600000$2XXhavzH0cnCWd7w9PD99M$W2Pv3d9V40aCWR/mzmQj8V1sFkE3FgmVwhF4MbQ9rPc=",
+        "username": "u1_web_app",
+        "about": "User",
+        "name": "User 1"}
+    },
+    {
+      "model": "traffic_mgmt.user",
+      "pk": 5,
+      "fields": {
+        "email": "user2@opencityhub.test",
+        "password": "pbkdf2_sha256$600000$2XXhavzH0cnCWd7w9PD99M$W2Pv3d9V40aCWR/mzmQj8V1sFkE3FgmVwhF4MbQ9rPc=",
+        "username": "u2_web_app",
+        "about": "User",
+        "name": "User 2"}
+    }
+]
